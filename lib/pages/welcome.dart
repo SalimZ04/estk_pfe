@@ -32,7 +32,7 @@ class Welcome extends StatelessWidget {
             Image.asset('assets/images/logobg.png', height: 100.0),
             SizedBox(height: 20.0),
             Text(
-              'Séléctionner Votre Choix!!!!',
+              'Séléctionner Votre espace!!!!',
               style: TextStyle(fontSize: 20.0),
             ),
             SizedBox(height: 20.0),
