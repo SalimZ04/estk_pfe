@@ -23,7 +23,7 @@ class _InputFieldState extends State<InputField> {
     return TextField(
       controller: widget.controller,
       decoration: InputDecoration(
-        suffixIcon:widget.isPassword ?const Icon(Icons.remove_red_eye,color: customColor2,) :const Icon(Icons.done,color: customColor2,) ,
+        suffixIcon:widget.isPassword ?const Icon(Icons.remove_red_eye,color: secondColor,) :const Icon(Icons.done,color: secondColor,) ,
         fillColor: Colors.transparent,
         hintStyle: const TextStyle(fontSize: 15),
         filled: true,

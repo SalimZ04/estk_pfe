@@ -1,4 +1,5 @@
 import 'package:estk_pfe/pages/loginpages/login_page_admin.dart';
+import 'package:estk_pfe/pages/loginpages/login_page_ensig.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -90,6 +91,11 @@ class Welcome extends StatelessWidget {
                       backgroundColor: Colors.green,
                       textColor: Colors.white,
                       fontSize: 16.0,
+                    );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LoginScreenEnseig()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
