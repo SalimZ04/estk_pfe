@@ -1,6 +1,6 @@
-import 'package:estk_pfe/pages/welcome.dart';
+
+import 'package:estk_pfe/pages/loginpages/login_page_admin.dart';
 import 'package:flutter/material.dart';
-import 'package:estk_pfe/pages/welcome.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(debugShowCheckedModeBanner: false, 
     initialRoute: "/", routes: {
       
-      "/": (context) => Welcome(),
+      "/": (context) =>const LoginAdminScreen(),
     });
     
   }
