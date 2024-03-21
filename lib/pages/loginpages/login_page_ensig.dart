@@ -1,18 +1,55 @@
 import 'package:estk_pfe/constant.dart';
+import 'package:estk_pfe/pages/dashbord.dart';
 import 'package:estk_pfe/widget/input_field.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 import 'package:animate_do/animate_do.dart';
 
-class LoginScreenEnseig extends StatefulWidget {
-  const LoginScreenEnseig({super.key});
-
+class LoginEnsignScreen extends StatefulWidget {
   @override
-  State<LoginScreenEnseig> createState() => _MyWidgetState();
+  _AuthScreenState createState() => _AuthScreenState();
 }
 
-class _MyWidgetState extends State<LoginScreenEnseig> {
-  final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+class _AuthScreenState extends State<LoginEnsignScreen> {
+  final _auth = FirebaseAuth.instance;
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  void _signUp() async {
+    try {
+      await _auth.createUserWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+      // Navigate to the dashboard screen after successful sign-up
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => DashboardScreen()),
+      );
+    } catch (e) {
+      // Handle sign-up errors
+      print(e);
+    }
+  }
+
+  void _signIn() async {
+    try {
+      await _auth.signInWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+      // Navigate to the dashboard screen after successful sign-in
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => DashboardScreen()),
+      );
+    } catch (e) {
+      // Handle sign-in errors
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var witdh = MediaQuery.of(context).size.width;
@@ -42,7 +79,7 @@ class _MyWidgetState extends State<LoginScreenEnseig> {
                     FadeInUp(
                       duration: const Duration(milliseconds: 1200),
                       child: const Text(
-                        "Bienvenue dans l'espace Enseignant",
+                        "Bienvenue dans l'espace Professeur",
                         style: TextStyle(
                           color: secondColor,
                           fontSize: 22,
@@ -137,7 +174,7 @@ class _MyWidgetState extends State<LoginScreenEnseig> {
                             }),
                           ),
                           child: const Text(
-                            "Notifier l'administrateur",
+                            "Notifier l'administration",
                             style: TextStyle(
                               color: secondColor,
                               fontSize: 15,
@@ -156,7 +193,7 @@ class _MyWidgetState extends State<LoginScreenEnseig> {
                 FadeInUp(
                   duration: const Duration(milliseconds: 1800),
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: _signUp,
                       style: ButtonStyle(
                         backgroundColor:
                             MaterialStateProperty.all<Color>(secondColor),
@@ -168,7 +205,7 @@ class _MyWidgetState extends State<LoginScreenEnseig> {
                             double.infinity, 60)), // Set height to 50
                       ),
                       child: const Text(
-                        'Commencer',
+                        'SignUp',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,
@@ -177,6 +214,30 @@ class _MyWidgetState extends State<LoginScreenEnseig> {
                         ),
                       )),
                 ),
+                /*FadeInUp(
+                  duration: const Duration(milliseconds: 1800),
+                  child: ElevatedButton(
+                      onPressed: _signIn,
+                      style: ButtonStyle(
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(secondColor),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(6))),
+                        minimumSize: MaterialStateProperty.all(const Size(
+                            double.infinity, 60)), // Set height to 50
+                      ),
+                      child: const Text(
+                        'SignIn',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontFamily: 'Sarala',
+                          fontWeight: FontWeight.w700,
+                        ),
+                      )),
+                ),*/
                 FadeInUp(
                   duration: const Duration(milliseconds: 1900),
                   child: Center(
@@ -190,7 +251,7 @@ class _MyWidgetState extends State<LoginScreenEnseig> {
                   child: const Center(
                     child: Text(
                       textAlign: TextAlign.center,
-                      "Réalisation par Omar Chouhani \n Abderrahmane Chaoui ",
+                      "Réalisation par Omar Chouhani \n Abderrahmane Chaoui",
                       style: TextStyle(
                         color: customColor2,
                         fontSize: 13,

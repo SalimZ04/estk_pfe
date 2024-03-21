@@ -95,7 +95,7 @@ class Welcome extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => LoginScreenEnseig()),
+                          builder: (context) => LoginEnsignScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(
