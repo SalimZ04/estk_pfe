@@ -32,8 +32,8 @@ class Welcome extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset('assets/images/logobg.png', height: 100.0),
-            SizedBox(height: 20.0),
-            Text(
+            const SizedBox(height: 20.0),
+            const Text(
               'Séléctionner Votre espace!!!!',
               style: TextStyle(fontSize: 20.0),
             ),

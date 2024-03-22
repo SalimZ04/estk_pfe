@@ -36,10 +36,10 @@ dependencies:
   cupertino_icons: ^1.0.6
   fluttertoast: ^8.2.4
   animate_do: ^3.3.4
+  flutter_svg: ^2.0.10+1
   firebase_auth: ^4.17.9
   flutter_staggered_grid_view: ^0.4.0
-  local_auth: 
-  
+  local_auth:
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +69,8 @@ flutter:
     - assets/images/teacher.png
     - assets/images/estkdigital.png
     - assets/images/logo3.png
+    - assets/images/logoestk_digital.svg
+    - assets/images/menulogo.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

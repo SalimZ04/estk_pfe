@@ -1,3 +1,4 @@
+
 import 'package:estk_pfe/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -23,20 +24,20 @@ class _InputFieldState extends State<InputField> {
     return TextField(
       controller: widget.controller,
       decoration: InputDecoration(
-        suffixIcon:widget.isPassword ?const Icon(Icons.remove_red_eye,color: secondColor,) :const Icon(Icons.done,color: secondColor,) ,
+        suffixIcon:widget.isPassword ? Icon(Icons.remove_red_eye,color: firstcolor,) : Icon(Icons.done,color: firstcolor,) ,
         fillColor: Colors.transparent,
         hintStyle: const TextStyle(fontSize: 15),
         filled: true,
         hintText: widget.hinttext,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),
-          borderSide: const BorderSide(color: customColor3),
+          borderSide:  BorderSide(color: secondcolor),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(6),
-          borderSide: const BorderSide(color: secondColor),
+          borderSide:  BorderSide(color: secondcolor),
         ),
-        focusColor: secondColor,
+        focusColor: firstcolor,
       ),
       obscureText:widget.isPassword,
     );

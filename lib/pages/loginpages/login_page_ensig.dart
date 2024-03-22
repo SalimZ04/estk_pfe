@@ -1,3 +1,4 @@
+
 import 'package:estk_pfe/constant.dart';
 import 'package:estk_pfe/pages/dashbord.dart';
 import 'package:estk_pfe/widget/input_field.dart';
@@ -78,10 +79,10 @@ class _AuthScreenState extends State<LoginEnsignScreen> {
                   children: [
                     FadeInUp(
                       duration: const Duration(milliseconds: 1200),
-                      child: const Text(
+                      child:  Text(
                         "Bienvenue dans l'espace Professeur",
                         style: TextStyle(
-                          color: secondColor,
+                          color: firstcolor,
                           fontSize: 22,
                           fontFamily: 'Sarala',
                           fontWeight: FontWeight.w700,
@@ -93,10 +94,10 @@ class _AuthScreenState extends State<LoginEnsignScreen> {
                     ),
                     FadeInUp(
                       duration: const Duration(milliseconds: 1300),
-                      child: const Text(
+                      child:  Text(
                         "Connectez-vous maintenant ",
                         style: TextStyle(
-                          color: secondColor,
+                          color: firstcolor,
                           fontSize: 22,
                           fontFamily: 'Sarala',
                           fontWeight: FontWeight.w700,
@@ -108,10 +109,10 @@ class _AuthScreenState extends State<LoginEnsignScreen> {
                     ),
                     FadeInUp(
                       duration: const Duration(milliseconds: 1400),
-                      child: const Text(
+                      child:  Text(
                         "Contactez l'administrateur pour obtenir vos identifiants.",
                         style: TextStyle(
-                          color: customColor2,
+                          color: secondcolor,
                           fontSize: 15,
                           fontFamily: 'SaralaRegulair',
                           fontWeight: FontWeight.w400,
@@ -148,10 +149,10 @@ class _AuthScreenState extends State<LoginEnsignScreen> {
                   duration: const Duration(milliseconds: 1700),
                   child: Row(
                     children: [
-                      const Text(
+                       Text(
                         "Mot de passe oublié?",
                         style: TextStyle(
-                          color: customColor2,
+                          color: secondcolor,
                           fontSize: 15,
                           fontFamily: 'SaralaRegulair',
                           fontWeight: FontWeight.w400,
@@ -173,10 +174,10 @@ class _AuthScreenState extends State<LoginEnsignScreen> {
                               return null; // Use default overlay color for other states
                             }),
                           ),
-                          child: const Text(
+                          child:  Text(
                             "Notifier l'administration",
                             style: TextStyle(
-                              color: secondColor,
+                              color: firstcolor,
                               fontSize: 15,
                               fontFamily: 'SaralaRegulair',
                               fontWeight: FontWeight.w700,
@@ -196,7 +197,7 @@ class _AuthScreenState extends State<LoginEnsignScreen> {
                       onPressed: _signUp,
                       style: ButtonStyle(
                         backgroundColor:
-                            MaterialStateProperty.all<Color>(secondColor),
+                            MaterialStateProperty.all<Color>(firstcolor),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
@@ -248,12 +249,12 @@ class _AuthScreenState extends State<LoginEnsignScreen> {
                 ),
                 FadeInUp(
                   duration: const Duration(milliseconds: 2000),
-                  child: const Center(
+                  child:  Center(
                     child: Text(
                       textAlign: TextAlign.center,
                       "Réalisation par Omar Chouhani \n Abderrahmane Chaoui",
                       style: TextStyle(
-                        color: customColor2,
+                        color: secondcolor,
                         fontSize: 13,
                         fontFamily: 'SaralaRegulair',
                         fontWeight: FontWeight.w400,
