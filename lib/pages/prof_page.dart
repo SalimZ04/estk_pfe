@@ -246,6 +246,8 @@ class _HomePageState extends State<ProfPage> {
           'assets/images/logoestk_digital.svg',
           height: 40,
         ),
+        actions: <Widget>[IconButton(onPressed: (){}, icon: Icon(
+          Icons.person_pin,color: firstcolor,size: 40,))],
         leading: Builder(
           builder: (BuildContext context) {
             return GestureDetector(
@@ -295,7 +297,7 @@ class _HomePageState extends State<ProfPage> {
               selectedIconTheme: IconThemeData(color: firstcolor),
               backgroundColor: Colors.white,
               labelType: NavigationRailLabelType
-                  .selected, // Set background color to white
+                  .none, // Set background color to white
               destinations: const <NavigationRailDestination>[
                 NavigationRailDestination(
                   icon: Padding(
