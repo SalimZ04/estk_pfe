@@ -1,8 +1,8 @@
 import 'package:estk_pfe/constant.dart';
 import 'package:estk_pfe/widget/complexe_drawer_version_deux.dart';
+import 'package:estk_pfe/widget/cours_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 
 class ProfPage extends StatefulWidget {
   const ProfPage({Key? key}) : super(key: key);
@@ -13,181 +13,7 @@ class ProfPage extends StatefulWidget {
 
 class _HomePageState extends State<ProfPage> {
   final List<Widget> _screens = [
-    Container(
-      color: Colors.white,
-      alignment: Alignment.center,
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: double.infinity,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Votre cours',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
-                      fontFamily: 'Sarala',
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  Icon(Icons.add_box, color: firstcolor, size: 36)
-                ],
-              ),
-            ),
-            const SizedBox(height: 20),
-            Container(
-              width: double.infinity,
-              decoration: ShapeDecoration(
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    side: const BorderSide(width: 1, color: Color(0xFFA5A9AC)),
-                    borderRadius: BorderRadius.circular(9),
-                  )),
-              child: Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const Expanded(
-                            child: Text(
-                              'Développement mobile',
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 30,
-                                fontFamily: 'Sarala',
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          ),
-                          Icon(
-                            Icons.more_horiz_rounded,
-                            color: secondcolor,
-                          )
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    const Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text.rich(
-                          TextSpan(
-                            children: [
-                              TextSpan(
-                                text: 'Module :',
-                                style: TextStyle(
-                                  color: Color(0xFFFCA129),
-                                  fontSize: 18,
-                                  fontFamily: 'Sarala',
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              TextSpan(
-                                text:
-                                    ' Développement mobile, Systèmes et applications répartis',
-                                style: TextStyle(
-                                  color: Color(0xFF788590),
-                                  fontSize: 18,
-                                  fontFamily: 'Sarala',
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
-                          textAlign: TextAlign.start,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text.rich(
-                          TextSpan(
-                            children: [
-                              TextSpan(
-                                text: 'Département :',
-                                style: TextStyle(
-                                  color: Color(0xFFFCA129),
-                                  fontSize: 18,
-                                  fontFamily: 'Sarala',
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                              TextSpan(
-                                text:
-                                    ' Génie de l’informatique et mathématiques',
-                                style: TextStyle(
-                                  color: Color(0xFF788590),
-                                  fontSize: 18,
-                                  fontFamily: 'Sarala',
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
-                          textAlign: TextAlign.start,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text.rich(
-                          TextSpan(
-                            children: [
-                              TextSpan(
-                                text: 'Filière :',
-                                style: TextStyle(
-                                  color: Color(0xFFFCA129),
-                                  fontSize: 18,
-                                  fontFamily: 'Sarala',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
-                                ),
-                              ),
-                              TextSpan(
-                                text: ' Génie logiciel S4',
-                                style: TextStyle(
-                                  color: Color(0xFF788590),
-                                  fontSize: 18,
-                                  fontFamily: 'Sarala',
-                                  fontWeight: FontWeight.w400,
-                                  height: 0,
-                                ),
-                              ),
-                            ],
-                          ),
-                          textAlign: TextAlign.start,
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-    Container(
+     Container(
       color: Colors.deepOrange.shade100,
       alignment: Alignment.center,
       child: const Text(
@@ -195,6 +21,8 @@ class _HomePageState extends State<ProfPage> {
         style: TextStyle(fontSize: 40),
       ),
     ),
+    const CoursWidget(),
+   
     Container(
       color: Colors.blue.shade100,
       alignment: Alignment.center,
@@ -246,8 +74,15 @@ class _HomePageState extends State<ProfPage> {
           'assets/images/logoestk_digital.svg',
           height: 40,
         ),
-        actions: <Widget>[IconButton(onPressed: (){}, icon: Icon(
-          Icons.person_pin,color: firstcolor,size: 40,))],
+        actions: <Widget>[
+          IconButton(
+              onPressed: () {},
+              icon: Icon(
+                Icons.person_pin,
+                color: firstcolor,
+                size: 40,
+              ))
+        ],
         leading: Builder(
           builder: (BuildContext context) {
             return GestureDetector(
@@ -296,55 +131,76 @@ class _HomePageState extends State<ProfPage> {
               },
               selectedIconTheme: IconThemeData(color: firstcolor),
               backgroundColor: Colors.white,
-              labelType: NavigationRailLabelType
-                  .none, // Set background color to white
+              labelType:
+                  NavigationRailLabelType.none, // Set background color to white
               destinations: const <NavigationRailDestination>[
                 NavigationRailDestination(
                   icon: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Icon(Icons.home_outlined),
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Icon(
+                      Icons.home_outlined,
+                      size: 30,
+                    ),
                   ),
                   label: Text('Accueil'),
                 ),
                 NavigationRailDestination(
                   icon: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Icon(Icons.av_timer),
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Icon(
+                      Icons.av_timer,
+                      size: 30,
+                    ),
                   ),
                   label: Text('Consultez les emplois'),
                 ),
                 NavigationRailDestination(
                   icon: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Icon(Icons.school_outlined),
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Icon(
+                      Icons.school_outlined,
+                      size: 30,
+                    ),
                   ),
                   label: Text('Consultez les cours'),
                 ),
                 NavigationRailDestination(
                   icon: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Icon(Icons.people_alt),
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Icon(
+                      Icons.people_alt,
+                      size: 30,
+                    ),
                   ),
                   label: Text('Consultee les classes'),
                 ),
                 NavigationRailDestination(
                   icon: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Icon(Icons.connect_without_contact),
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Icon(
+                      Icons.connect_without_contact,
+                      size: 30,
+                    ),
                   ),
                   label: Text('Contacter fonctionner'),
                 ),
                 NavigationRailDestination(
                   icon: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Icon(Icons.settings),
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Icon(
+                      Icons.settings,
+                      size: 30,
+                    ),
                   ),
                   label: Text('Paramètre'),
                 ),
                 NavigationRailDestination(
                   icon: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Icon(Icons.logout),
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Icon(
+                      Icons.logout,
+                      size: 30,
+                    ),
                   ),
                   label: Text('Log out'),
                 ),

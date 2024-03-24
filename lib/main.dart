@@ -1,13 +1,14 @@
-import 'package:estk_pfe/pages/loginpages/login_page_admin.dart';
-import 'package:estk_pfe/pages/welcome.dart';
+import 'package:estk_pfe/loginpages/login_page_admin.dart';
+import 'package:estk_pfe/pages/details_pages.dart';
+// import 'package:estk_pfe/pages/welcome.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import 'package:flutter/material.dart';
+import 'package:estk_pfe/pages/prof_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-      options: FirebaseOptions(
+      options:const FirebaseOptions(
           apiKey: "AIzaSyAEPYi0yA4zwrVLeofpEC5VvbhgyWaEpBE",
           projectId: "estk-pfe",
           messagingSenderId: "837017476705",
@@ -24,8 +25,9 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: "/",
         routes: {
-          "/": (context) => Welcome(),
+          "/": (context) =>const ProfPage(),
           "/Login": (context) => const LoginAdminScreen(),
+          '/details': (context) => const DetailsPage(),
         });
   }
 }
