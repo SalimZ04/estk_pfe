@@ -8,7 +8,7 @@ import 'package:estk_pfe/pages/prof_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-      options:const FirebaseOptions(
+      options: const FirebaseOptions(
           apiKey: "AIzaSyAEPYi0yA4zwrVLeofpEC5VvbhgyWaEpBE",
           projectId: "estk-pfe",
           messagingSenderId: "837017476705",
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: "/",
         routes: {
-          "/": (context) =>const ProfPage(),
+          "/": (context) => const ProfPage(),
           "/Login": (context) => const LoginAdminScreen(),
           '/details': (context) => const DetailsPage(),
         });

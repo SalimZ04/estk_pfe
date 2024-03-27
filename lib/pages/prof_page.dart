@@ -13,7 +13,7 @@ class ProfPage extends StatefulWidget {
 
 class _HomePageState extends State<ProfPage> {
   final List<Widget> _screens = [
-     Container(
+    Container(
       color: Colors.deepOrange.shade100,
       alignment: Alignment.center,
       child: const Text(
@@ -22,7 +22,6 @@ class _HomePageState extends State<ProfPage> {
       ),
     ),
     const CoursWidget(),
-   
     Container(
       color: Colors.blue.shade100,
       alignment: Alignment.center,
