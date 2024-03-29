@@ -25,7 +25,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         initialRoute: "/",
         routes: {
-          "/": (context) => const ProfPage(),
+          "/": (context) => const ProfPage(
+                department: '',
+                module: '',
+                filiere: '',
+                niveau: '',
+              ),
           "/Login": (context) => const LoginAdminScreen(),
           '/details': (context) => const DetailsPage(),
         });

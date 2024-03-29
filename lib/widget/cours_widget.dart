@@ -1,4 +1,8 @@
+import 'package:estk_pfe/pages/prof_page.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
+import 'dart:convert';
+import 'dart:io';
 
 class CoursWidget extends StatefulWidget {
   const CoursWidget({Key? key}) : super(key: key);
@@ -10,7 +14,7 @@ class CoursWidget extends StatefulWidget {
 class _MyWidgetState extends State<CoursWidget> {
   Future<List<Map<String, String>>> fetchData() async {
     // Simulate fetching data from a database
-    // await Future.delayed(Duration(seconds: 1));
+    //await Future.delayed(Duration(seconds: 1));
 
     // Return sample data as a map
     return [
@@ -58,11 +62,7 @@ class _MyWidgetState extends State<CoursWidget> {
         } else if (snapshot.hasError) {
           return Text('Error: ${snapshot.error}');
         } else {
-          // Extract the data from the snapshot
           final data = snapshot.data!.first;
-          _selectedModule = data['Module'];
-          _selectedFiliere = data['Filière'];
-          _selectedNiveau = data['Niveau'];
 
           return Container(
             color: Colors.white,
@@ -215,15 +215,27 @@ class _MyWidgetState extends State<CoursWidget> {
                           const SizedBox(height: 20),
                           ElevatedButton(
                             onPressed: () async {
-                              final dataToSave = {
-                                'Module': _selectedModule,
-                                'Filière': _selectedFiliere,
-                                'Niveau': _selectedNiveau,
-                              };
-                              ScaffoldMessenger.of(context)
-                                  .showSnackBar(const SnackBar(
-                                content: Text('Enregistrer'),
-                              ));
+                              if (_selectedModule == null ||
+                                  _selectedFiliere == null ||
+                                  _selectedNiveau == null) {
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(const SnackBar(
+                                  content:
+                                      Text('Veuillez remplis tous les champs'),
+                                ));
+                              } else {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => ProfPage(
+                                      department: data['Département']!,
+                                      module: _selectedModule!,
+                                      filiere: _selectedFiliere!,
+                                      niveau: _selectedNiveau!,
+                                    ),
+                                  ),
+                                );
+                              }
                             },
                             child: const Text('Cour Enregistrer'),
                           ),

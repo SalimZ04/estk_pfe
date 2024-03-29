@@ -5,13 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfPage extends StatefulWidget {
-  const ProfPage({Key? key}) : super(key: key);
+  final String department;
+  final String module;
+  final String filiere;
+  final String niveau;
+
+  const ProfPage({
+    this.department = 'Génie de l’informatique et mathématiques',
+    this.module = 'Développement mobile, Systèmes et applications répartis',
+    this.filiere = 'Génie logiciel',
+    this.niveau = 'S4',
+  });
 
   @override
-  State<ProfPage> createState() => _HomePageState();
+  State<ProfPage> createState() => _ProfPageState();
 }
 
-class _HomePageState extends State<ProfPage> {
+class _ProfPageState extends State<ProfPage> {
   final List<Widget> _screens = [
     Container(
       color: Colors.deepOrange.shade100,
@@ -75,12 +85,13 @@ class _HomePageState extends State<ProfPage> {
         ),
         actions: <Widget>[
           IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.person_pin,
-                color: firstcolor,
-                size: 40,
-              ))
+            onPressed: () {},
+            icon: Icon(
+              Icons.person_pin,
+              color: firstcolor,
+              size: 40,
+            ),
+          )
         ],
         leading: Builder(
           builder: (BuildContext context) {
@@ -130,8 +141,7 @@ class _HomePageState extends State<ProfPage> {
               },
               selectedIconTheme: IconThemeData(color: firstcolor),
               backgroundColor: Colors.white,
-              labelType:
-                  NavigationRailLabelType.none, // Set background color to white
+              labelType: NavigationRailLabelType.none,
               destinations: const <NavigationRailDestination>[
                 NavigationRailDestination(
                   icon: Padding(

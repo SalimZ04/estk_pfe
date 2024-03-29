@@ -47,6 +47,7 @@ dev_dependencies:
     sdk: flutter
   sqflite: ^2.0.0+3
   path:
+  path_provider:
   csv : 
   #firebase_core: 
   cloud_firestore:
