@@ -47,8 +47,14 @@ dev_dependencies:
     sdk: flutter
   sqflite: ^2.0.0+3
   path:
+<<<<<<< HEAD
   csv:
   #firebase_core:
+=======
+  path_provider:
+  csv : 
+  #firebase_core: 
+>>>>>>> 651a36996f165aad8d4382d9ef05cf5b4973e654
   cloud_firestore:
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
