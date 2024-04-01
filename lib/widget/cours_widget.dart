@@ -224,6 +224,7 @@ class _MyWidgetState extends State<CoursWidget> {
                                       Text('Veuillez remplis tous les champs'),
                                 ));
                               } else {
+                                /*
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -234,7 +235,13 @@ class _MyWidgetState extends State<CoursWidget> {
                                       niveau: _selectedNiveau!,
                                     ),
                                   ),
-                                );
+                                );*/
+
+                                print('--------------------');
+                                print(data['Département']);
+                                print('Module: $_selectedModule');
+                                print('Filière: $_selectedFiliere');
+                                print('Niveau: $_selectedNiveau');
                               }
                             },
                             child: const Text('Cour Enregistrer'),

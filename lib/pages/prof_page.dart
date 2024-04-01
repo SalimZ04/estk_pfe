@@ -24,14 +24,14 @@ class ProfPage extends StatefulWidget {
 class _ProfPageState extends State<ProfPage> {
   final List<Widget> _screens = [
     Container(
-      color: Colors.deepOrange.shade100,
+      color: Colors.white,
       alignment: Alignment.center,
-      child: const Text(
-        'Cours',
+      child: Text(
+        '',
         style: TextStyle(fontSize: 40),
       ),
     ),
-    const CoursWidget(),
+    CoursWidget(),
     Container(
       color: Colors.blue.shade100,
       alignment: Alignment.center,

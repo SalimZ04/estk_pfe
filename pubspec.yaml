@@ -53,6 +53,7 @@ dev_dependencies:
 =======
   path_provider:
   csv : 
+  shared_preferences: 
   #firebase_core: 
 >>>>>>> 651a36996f165aad8d4382d9ef05cf5b4973e654
   cloud_firestore:
