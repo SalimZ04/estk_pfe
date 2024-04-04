@@ -86,7 +86,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              'Développement mobile, Systèmes et applications répartis',
+                              '',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,
@@ -123,7 +123,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              'Génie de l’informatique et mathématiques',
+                              '',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,
@@ -161,7 +161,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              'Génie logiciel S4',
+                              '',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,
@@ -199,7 +199,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              'S4',
+                              '',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,
@@ -237,7 +237,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              '30',
+                              '',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,
@@ -280,7 +280,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  'Mercredi ',
+                                  '',
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                     color: secondcolor,
@@ -292,7 +292,7 @@ class _MyWidgetState extends State<DetailsPage> {
                                 ),
                                 const SizedBox(width: 26),
                                 Text(
-                                  '02:30 PM - 6:30 PM',
+                                  '',
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                     color: secondcolor,
@@ -332,7 +332,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              'Développement mobile',
+                              '',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,

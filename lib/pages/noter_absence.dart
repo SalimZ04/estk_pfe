@@ -12,8 +12,6 @@ class NoterAbsPages extends StatefulWidget {
 }
 
 class _MyWidgetState extends State<NoterAbsPages> {
-  
-
   @override
   Widget build(BuildContext context) {
     DateTime now = DateTime.now();

@@ -25,28 +25,12 @@ class _CoursWidgetv2State extends State<CoursWidgetv2> {
     // Return sample data as a map
     return [
       {
-        'Module': 'Développement mobile',
-        'Département': 'Génie de l’informatique et mathématiques',
-        'Filière': 'Génie logiciel',
-        'Niveau': 'S4',
-        'Day': 'Mercredi',
-        'Time': '02:30 PM - 6:30 PM',
-      },
-      {
-        'Module': 'Ethernet',
-        'Département': 'Génie de l’informatique et mathématiques',
-        'Filière': 'Gestion des réseaux',
-        'Niveau': 'S2',
-        'Day': 'jeudi',
-        'Time': '10:00 AM - 12:00 PM',
-      },
-      {
-        'Module': 'Ethernet',
-        'Département': 'Génie de l’informatique et mathématiques',
-        'Filière': 'Gestion des réseaux',
-        'Niveau': 'S2',
-        'Day': 'jeudi',
-        'Time': '10:00 AM - 12:00 PM',
+        'Module': '$_selectedModule',
+        'Département': 'Informatiques et Mathematiques',
+        'Filière': '$_selectedFiliere',
+        'Niveau': '$_selectedNiveau',
+        'Day': '$_selectedDay',
+        'Time': '$_selectedTime',
       },
     ];
   }
@@ -206,6 +190,14 @@ class _CoursWidgetv2State extends State<CoursWidgetv2> {
                                               ))
                                           .toList(),
                                     ),
+                                    Text(
+                                        'Module sélectionné: $_selectedModule'),
+                                    Text(
+                                        'Filière sélectionnée: $_selectedFiliere'),
+                                    Text(
+                                        'Niveau sélectionné: $_selectedNiveau'),
+                                    Text('Jour sélectionné: $_selectedDay'),
+                                    Text('Heure sélectionnée: $_selectedTime'),
                                     const SizedBox(height: 20),
                                     Row(
                                       mainAxisAlignment:
@@ -231,6 +223,7 @@ class _CoursWidgetv2State extends State<CoursWidgetv2> {
                                               );
                                             } else {
                                               // Proceed with your logic here
+                                              print('---------------------');
                                               print('Module: $_selectedModule');
                                               print(
                                                   'Filière: $_selectedFiliere');
@@ -275,7 +268,7 @@ class _CoursWidgetv2State extends State<CoursWidgetv2> {
                                             backgroundColor:
                                                 MaterialStateProperty.all(
                                                     Colors.red),
-                                                    shape: MaterialStateProperty.all<
+                                            shape: MaterialStateProperty.all<
                                                 RoundedRectangleBorder>(
                                               RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.circular(
@@ -313,12 +306,12 @@ class _CoursWidgetv2State extends State<CoursWidgetv2> {
                       itemBuilder: (context, index) {
                         final item = data[index];
                         return CourseListItem(
-                          module: item['Module']!,
+                          module: _selectedModule ?? '',
                           department: item['Département']!,
-                          filiere: item['Filière']!,
-                          niveau: item['Niveau']!,
-                          day: item['Day']!,
-                          time: item['Time']!,
+                          filiere: _selectedFiliere ?? '',
+                          niveau: _selectedNiveau ?? '',
+                          day: _selectedDay ?? '',
+                          time: _selectedTime ?? '',
                         );
                       },
                     );
@@ -504,22 +497,50 @@ class CourseListItem extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(day,
+              Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Day : ',
+                      style: TextStyle(
+                          color: firstcolor,
+                          fontSize: 18,
+                          fontFamily: 'Sarala',
+                          fontWeight: FontWeight.w400),
+                    ),
+                    TextSpan(
+                      text: day,
                       style: TextStyle(
                           color: secondcolor,
                           fontSize: 18,
                           fontFamily: 'Sarala',
-                          fontWeight: FontWeight.w400)),
-                  Text(time,
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+              Text.rich(
+                TextSpan(
+                  children: [
+                    TextSpan(
+                      text: 'Time : ',
+                      style: TextStyle(
+                          color: firstcolor,
+                          fontSize: 18,
+                          fontFamily: 'Sarala',
+                          fontWeight: FontWeight.w400),
+                    ),
+                    TextSpan(
+                      text: time,
                       style: TextStyle(
                           color: secondcolor,
                           fontSize: 18,
                           fontFamily: 'Sarala',
-                          fontWeight: FontWeight.w400)),
-                ],
+                          fontWeight: FontWeight.w400),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
