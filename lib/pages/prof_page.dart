@@ -1,6 +1,6 @@
 import 'package:estk_pfe/constant.dart';
 import 'package:estk_pfe/widget/complexe_drawer_version_deux.dart';
-import 'package:estk_pfe/widget/cours_widget.dart';
+import 'package:estk_pfe/widget/cours_widget%20copy.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -10,7 +10,7 @@ class ProfPage extends StatefulWidget {
   final String filiere;
   final String niveau;
 
-  const ProfPage({
+  const ProfPage({super.key, 
     this.department = 'Génie de l’informatique et mathématiques',
     this.module = 'Développement mobile, Systèmes et applications répartis',
     this.filiere = 'Génie logiciel',
@@ -26,12 +26,12 @@ class _ProfPageState extends State<ProfPage> {
     Container(
       color: Colors.white,
       alignment: Alignment.center,
-      child: Text(
-        '',
+      child:const Text(
+        'Home',
         style: TextStyle(fontSize: 40),
       ),
     ),
-    CoursWidget(),
+    const CoursWidgetv2(),
     Container(
       color: Colors.blue.shade100,
       alignment: Alignment.center,
