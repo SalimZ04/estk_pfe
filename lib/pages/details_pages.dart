@@ -10,6 +10,12 @@ class DetailsPage extends StatefulWidget {
   State<DetailsPage> createState() => _MyWidgetState();
 }
 
+String? _selectedModule;
+String? _selectedFiliere;
+String? _selectedNiveau;
+String? _selectedDay;
+String? _selectedTime;
+
 class _MyWidgetState extends State<DetailsPage> {
   @override
   Widget build(BuildContext context) {
@@ -86,7 +92,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              '',
+                              '$_selectedModule',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,
@@ -123,7 +129,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              '',
+                              'Informatiques et Mathematiques',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,
@@ -161,7 +167,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              '',
+                              'Filiere: $_selectedFiliere',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,
@@ -199,7 +205,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              '',
+                              'Module: $_selectedNiveau',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,
@@ -237,7 +243,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              '',
+                              '30',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,
@@ -280,7 +286,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  '',
+                                  '$_selectedDay',
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                     color: secondcolor,
@@ -318,7 +324,7 @@ class _MyWidgetState extends State<DetailsPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Element ',
+                              'Time ',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: firstcolor,
@@ -332,7 +338,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              '',
+                              '$_selectedTime',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,
@@ -428,4 +434,13 @@ class _MyWidgetState extends State<DetailsPage> {
       ),
     );
   }
+}
+
+void setSelectedCourse(
+    String module, String filiere, String niveau, String day, String time) {
+  _selectedModule = module;
+  _selectedFiliere = filiere;
+  _selectedNiveau = niveau;
+  _selectedDay = day;
+  _selectedTime = time;
 }

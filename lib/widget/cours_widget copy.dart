@@ -1,4 +1,5 @@
 import 'package:estk_pfe/constant.dart';
+import 'package:estk_pfe/pages/details_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -231,6 +232,12 @@ class _CoursWidgetv2State extends State<CoursWidgetv2> {
                                               print('Day: $_selectedDay');
                                               print('Time: $_selectedTime');
                                             }
+                                            setSelectedCourse(
+                                                '$_selectedModule',
+                                                '$_selectedFiliere',
+                                                '$_selectedNiveau',
+                                                '$_selectedDay',
+                                                '$_selectedTime');
                                           },
                                           style: ButtonStyle(
                                             backgroundColor:
