@@ -1,7 +1,8 @@
 import 'package:estk_pfe/constant.dart';
 import 'package:estk_pfe/widget/cours_widget%20copy.dart';
 import 'package:flutter/material.dart';
-
+import 'package:estk_pfe/pages/prof_page.dart';
+import 'package:estk_pfe/pages/details_pages.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,6 +10,12 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _MyWidgetState();
 }
+
+String? _selectedModule;
+String? _selectedFiliere;
+String? _selectedNiveau;
+String? _selectedDay;
+String? _selectedTime;
 
 class _MyWidgetState extends State<HomePage> {
   @override
@@ -84,11 +91,10 @@ class _MyWidgetState extends State<HomePage> {
                         ),
                         TextButton(
                           onPressed: () {
-                              Navigator.push(
+                            Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>const CoursWidgetv2()
-                                  ),
+                                  builder: (context) => const DetailsPage()),
                             );
                           },
                           child: Text(
@@ -110,7 +116,7 @@ class _MyWidgetState extends State<HomePage> {
                       child: ListView.builder(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        itemCount: 5,
+                        itemCount: 1,
                         itemBuilder: (_, index) {
                           return Padding(
                             padding: const EdgeInsets.all(8),
@@ -150,7 +156,6 @@ class _MyWidgetState extends State<HomePage> {
                                             image: AssetImage(
                                               "assets/images/android.png",
                                             ),
-                                            
                                           ),
                                         ),
                                       ),
@@ -164,7 +169,7 @@ class _MyWidgetState extends State<HomePage> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Génie logiciel S4',
+                                        'Module: $_selectedModule',
                                         textAlign: TextAlign.start,
                                         style: TextStyle(
                                           color: Color(0xFF788590),
@@ -176,7 +181,7 @@ class _MyWidgetState extends State<HomePage> {
                                       ),
                                       const SizedBox(height: 5),
                                       Text(
-                                        'Développement mobile',
+                                        'Filiere : $_selectedFiliere',
                                         textAlign: TextAlign.start,
                                         style: TextStyle(
                                           color: Colors.black,
@@ -187,39 +192,6 @@ class _MyWidgetState extends State<HomePage> {
                                         ),
                                       ),
                                       const SizedBox(height: 5),
-                                      SizedBox(
-                                        width: double.infinity,
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              'Mercredi ',
-                                              textAlign: TextAlign.start,
-                                              style: TextStyle(
-                                                color: secondcolor,
-                                                fontSize: 15,
-                                                fontFamily: 'Sarala',
-                                                fontWeight: FontWeight.w400,
-                                                height: 0,
-                                              ),
-                                            ),
-                                            Text(
-                                              '02:30 PM - 6:30 PM',
-                                              textAlign: TextAlign.start,
-                                              style: TextStyle(
-                                                color: secondcolor,
-                                                fontSize: 15,
-                                                fontFamily: 'Sarala',
-                                                fontWeight: FontWeight.w400,
-                                                height: 0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
                                     ],
                                   )
                                 ],
@@ -254,7 +226,13 @@ class _MyWidgetState extends State<HomePage> {
                           ),
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const DetailsPage()),
+                            );
+                          },
                           child: Text(
                             "Voir Tout",
                             style: TextStyle(
@@ -274,7 +252,7 @@ class _MyWidgetState extends State<HomePage> {
                       child: ListView.builder(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
-                          itemCount: 5,
+                          itemCount: 1,
                           itemBuilder: (_, index) {
                             return Padding(
                               padding: const EdgeInsets.all(8),
@@ -302,7 +280,7 @@ class _MyWidgetState extends State<HomePage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Génie de l’informatique et mathématiques',
+                                      'Departemment',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         color: Color(0xFF788590),
@@ -323,7 +301,7 @@ class _MyWidgetState extends State<HomePage> {
                                       ),
                                     ),
                                     Text(
-                                      'quatrième semestre',
+                                      'Niveau: $_selectedNiveau',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         color: Color(0xFF788590),
@@ -348,4 +326,13 @@ class _MyWidgetState extends State<HomePage> {
       ),
     );
   }
+}
+
+void setSelectedCourse(
+    String module, String filiere, String niveau, String day, String time) {
+  _selectedModule = module;
+  _selectedFiliere = filiere;
+  _selectedNiveau = niveau;
+  _selectedDay = day;
+  _selectedTime = time;
 }

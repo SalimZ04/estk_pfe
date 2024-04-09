@@ -11,7 +11,8 @@ class ProfPage extends StatefulWidget {
   final String filiere;
   final String niveau;
 
-  const ProfPage({super.key, 
+  const ProfPage({
+    super.key,
     this.department = 'Génie de l’informatique et mathématiques',
     this.module = 'Développement mobile, Systèmes et applications répartis',
     this.filiere = 'Génie logiciel',

@@ -2,6 +2,7 @@ import 'package:estk_pfe/constant.dart';
 import 'package:estk_pfe/pages/details_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:estk_pfe/widget/home_page.dart';
 
 class CoursWidgetv2 extends StatefulWidget {
   const CoursWidgetv2({Key? key}) : super(key: key);
@@ -233,6 +234,12 @@ class _CoursWidgetv2State extends State<CoursWidgetv2> {
                                               print('Time: $_selectedTime');
                                             }
                                             setSelectedCourse(
+                                                '$_selectedModule',
+                                                '$_selectedFiliere',
+                                                '$_selectedNiveau',
+                                                '$_selectedDay',
+                                                '$_selectedTime');
+                                            setSelected(
                                                 '$_selectedModule',
                                                 '$_selectedFiliere',
                                                 '$_selectedNiveau',

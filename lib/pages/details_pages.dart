@@ -205,7 +205,7 @@ class _MyWidgetState extends State<DetailsPage> {
                               height: 8,
                             ),
                             Text(
-                              'Module: $_selectedNiveau',
+                              '$_selectedNiveau',
                               textAlign: TextAlign.start,
                               style: TextStyle(
                                 color: secondcolor,
@@ -380,9 +380,10 @@ class _MyWidgetState extends State<DetailsPage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           IconButton(
-                              onPressed: () {},
-                              icon: Icon(Icons.add_box,
-                                  color: firstcolor, size: 36))
+                            onPressed: () {},
+                            icon: Icon(Icons.add_box,
+                                color: firstcolor, size: 36),
+                          ),
                         ],
                       )
                     ],
@@ -436,7 +437,7 @@ class _MyWidgetState extends State<DetailsPage> {
   }
 }
 
-void setSelectedCourse(
+void setSelected(
     String module, String filiere, String niveau, String day, String time) {
   _selectedModule = module;
   _selectedFiliere = filiere;
