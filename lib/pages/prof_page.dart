@@ -1,6 +1,7 @@
 import 'package:estk_pfe/constant.dart';
 import 'package:estk_pfe/widget/complexe_drawer_version_deux.dart';
 import 'package:estk_pfe/widget/cours_widget%20copy.dart';
+import 'package:estk_pfe/widget/crudpage.dart';
 import 'package:estk_pfe/widget/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,7 +27,7 @@ class ProfPage extends StatefulWidget {
 class _ProfPageState extends State<ProfPage> {
   final List<Widget> _screens = [
     const HomePage(),
-    const CoursWidgetv2(),
+    CrudPage(),
     Container(
       color: Colors.blue.shade100,
       alignment: Alignment.center,

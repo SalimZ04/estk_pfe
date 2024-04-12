@@ -402,7 +402,7 @@ class CourseListItem extends StatelessWidget {
                         value: 'détails',
                         child: Text('Détails'),
                       ),
-                      const PopupMenuItem<String>(
+                      PopupMenuItem<String>(
                         value: 'modifier',
                         child: Text('Modifier'),
                       ),
